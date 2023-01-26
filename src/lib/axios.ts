@@ -1,5 +1,10 @@
 import axios from 'axios'
+import Constants from 'expo-constants'
+
+const apiUrl = Constants.expoConfig?.extra!.apiUrl
+
+console.log(apiUrl)
 
 export const api = axios.create({
-    baseURL: process.env.API_URL ?? 'http://192.168.15.124:3333'
+    baseURL: apiUrl
 })
