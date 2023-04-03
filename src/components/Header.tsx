@@ -9,7 +9,7 @@ export function Header() {
   const { navigate } = useNavigation()
 
   return (
-    <View className="w-full flex-row items-center justify-between ">
+    <View className="w-full flex-row items-center justify-between mb-2">
       <Logo />
 
       <TouchableOpacity

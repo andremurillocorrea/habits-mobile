@@ -111,7 +111,6 @@ export function Habit() {
         </View>
 
       </ScrollView>
-
     </View>
   )
 }
