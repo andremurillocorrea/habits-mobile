@@ -1,5 +1,5 @@
 import { View, useWindowDimensions, Text } from 'react-native'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 import colors from "tailwindcss/colors";
 
@@ -14,15 +14,6 @@ const renderScene = SceneMap({
   cycle: HabitsCycle
 })
 
-// const renderScene = ({ route, jumpTo }) => {
-//   switch (route.key) {
-//     case 'overview':
-//       return <HabitsOverview />
-//     case 'cycle':
-//       return <HabitsCycle />
-//   }
-// }
-
 export function Home() {
   
   const layout = useWindowDimensions()
@@ -33,20 +24,15 @@ export function Home() {
     { key: 'cycle', title: 'Cycle' },
   ]);
 
-  // const progressRef = useRef<ProgressRef>(null)
-
   return (
     <View className="flex-1 bg-background px-8 pt-16">
       <Header />
       
-
       <TabView
         navigationState={{index, routes}}
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
-        // lazy={({ route }) => route.key === 'cycle'}
-        // onSwipeEnd={() => reAnimateProgressCircle(progressRef)}
         renderTabBar={props => <TabBar 
           {...props} 
           style={{ backgroundColor: colors.zinc[900], height: 5, borderRadius: 5}}
